@@ -130,6 +130,6 @@ dist
 .pnp.*
 
 # jasmine
-.lib/
-.spec/
-.src/
+.lib/*
+.spec/*
+.src/*
