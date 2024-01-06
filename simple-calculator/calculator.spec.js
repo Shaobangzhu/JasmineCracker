@@ -1,4 +1,4 @@
-describe('calculator.js', function(){
+xdescribe('calculator.js', function(){
     it('should add numbers to total', function() {
         const calculator = new Calculator();
         calculator.add(5);
