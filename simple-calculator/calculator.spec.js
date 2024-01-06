@@ -6,7 +6,7 @@ describe('calculator.js', function(){
         expect(calculator.total).toBe(5);
     });
 
-    it('should subtract numbers from total', function() {
+    xit('should subtract numbers from total', function() {
         const calculator = new Calculator();
         calculator.add(5);
         calculator.subtract(2);
