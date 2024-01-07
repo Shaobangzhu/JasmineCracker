@@ -98,4 +98,11 @@ describe('calculator.js', function(){
 
         expect(calculator.total).toBeNaN();
     });
+
+    // toThrow toThrowError
+    it('handles divide by zero', function() {
+        const calculator = new Calculator();
+
+        expect(function() { calculator.divide(0) }).toThrowError(Error, 'Cannot divide by zero');
+    });
 });
