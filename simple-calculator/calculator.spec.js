@@ -114,4 +114,12 @@ describe('calculator.js', function(){
         expect(calculator.add(20)).toBe(70);
         expect(calculator.total).toMatch(/-?\d+/);
     });
+
+    // custom-matchers
+    it('custom to be calculator', function() {
+        jasmine.addMatchers(customMatchers);
+        const calculator = new Calculator();
+
+        expect(calculator).toBeCalculator();
+    });
 });
