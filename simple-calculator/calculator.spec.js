@@ -1,15 +1,20 @@
 describe('calculator.js', function(){
 
     describe('Calculator', function() {
+
+        let calculator;
+
+        beforeEach(function() {
+            calculator = new Calculator();
+        });
+
         it('should add numbers to total', function() {
-            const calculator = new Calculator();
             calculator.add(5);
     
             expect(calculator.total).toBe(5);
         });
     
         it('should subtract numbers from total', function() {
-            const calculator = new Calculator();
             calculator.add(5);
             calculator.subtract(2);
     
@@ -17,7 +22,6 @@ describe('calculator.js', function(){
         });
     
         it('should multiply total by number', function() {
-            const calculator = new Calculator();
             calculator.add(5);
             calculator.multiply(3);
     
@@ -25,7 +29,6 @@ describe('calculator.js', function(){
         });
     
         it('should divide total by number', function() {
-            const calculator = new Calculator();
             calculator.add(25);
             calculator.divide(5);
     
