@@ -88,4 +88,14 @@ describe('calculator.js', function(){
 
         expect(calculator.constructor.name).toContain("Calc");
     });
+
+    // toBeNaN
+    it('does not handle NaN', function() {
+        const calculator = new Calculator();
+
+        calculator.total = 20;
+        calculator.multiply('a');
+
+        expect(calculator.total).toBeNaN();
+    });
 });
