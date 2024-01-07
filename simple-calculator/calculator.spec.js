@@ -81,4 +81,11 @@ describe('calculator.js', function(){
         calculator.total = null;
         expect(calculator.total).toBeNull();
     });
+
+    // toContain
+    it('can contain a substring', function() {
+        const calculator = new Calculator();
+
+        expect(calculator.constructor.name).toContain("Calc");
+    });
 });
