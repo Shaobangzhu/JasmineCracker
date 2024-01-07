@@ -39,5 +39,13 @@ describe('calculator.js', function(){
         expect(calculator.total).toBe(0);
     });
 
+    // toEqual, Deep equality, two different objects
+    // but the values of total are the same so it compares the variable in the constructor
 
+    it('has constructor', function() {
+        const calculator1 = new Calculator();
+        const calculator2 = new Calculator();
+
+        expect(calculator1).toEqual(calculator2);
+    });
 });
