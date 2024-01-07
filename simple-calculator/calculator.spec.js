@@ -32,7 +32,6 @@ describe('calculator.js', function(){
     });
 
     // toBe "==="
-
     it('should initialize the total', function() {
         const calculator = new Calculator();
 
@@ -41,11 +40,20 @@ describe('calculator.js', function(){
 
     // toEqual, Deep equality, two different objects
     // but the values of total are the same so it compares the variable in the constructor
-
     it('has constructor', function() {
         const calculator1 = new Calculator();
         const calculator2 = new Calculator();
 
         expect(calculator1).toEqual(calculator2);
     });
+
+    // toBeTruthy and toBeFalsy
+    it('can be instantiated', function() {
+        const calculator1 = new Calculator();
+        const calculator2 = new Calculator();
+
+        expect(calculator1).toBeTruthy();
+        expect(calculator2).toBeTruthy();
+    });
+
 });
