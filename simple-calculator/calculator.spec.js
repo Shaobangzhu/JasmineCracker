@@ -1,4 +1,5 @@
-xdescribe('calculator.js', function(){
+describe('calculator.js', function(){
+
     it('should add numbers to total', function() {
         const calculator = new Calculator();
         calculator.add(5);
@@ -6,7 +7,7 @@ xdescribe('calculator.js', function(){
         expect(calculator.total).toBe(5);
     });
 
-    xit('should subtract numbers from total', function() {
+    it('should subtract numbers from total', function() {
         const calculator = new Calculator();
         calculator.add(5);
         calculator.subtract(2);
@@ -29,4 +30,14 @@ xdescribe('calculator.js', function(){
 
         expect(calculator.total).toBe(5);
     });
+
+    // toBe "==="
+
+    it('should initialize the total', function() {
+        const calculator = new Calculator();
+
+        expect(calculator.total).toBe(0);
+    });
+
+
 });
