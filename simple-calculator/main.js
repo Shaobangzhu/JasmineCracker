@@ -34,6 +34,10 @@ function calculate(inputValue) {
     updateResult(result);
 }
 
+/**
+ * Updates result in DOM element.
+ * @param {string} result 
+ */
 function updateResult(result) {
     const element = document.getElementById('result');
 
