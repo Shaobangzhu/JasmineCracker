@@ -56,4 +56,11 @@ describe('calculator.js', function(){
         expect(calculator2).toBeTruthy();
     });
 
+    // Negating matchers
+    it('instantiates unique object', function() {
+        const calculator1 = new Calculator();
+        const calculator2 = new Calculator();
+
+        expect(calculator1).not.toBe(calculator2);
+    });
 });
