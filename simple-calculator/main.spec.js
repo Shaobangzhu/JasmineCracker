@@ -120,6 +120,10 @@ describe('main.js', function() {
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('whatever [add] returns');
         });
+
+        it('does not handle errors', function() {
+            spyOn(Calculator.prototype, 'multiply').and.throwError('some error');
+        });
     });
 
     describe('updateResult()', function() {
