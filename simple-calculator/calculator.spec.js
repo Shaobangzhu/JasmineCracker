@@ -131,5 +131,23 @@ describe('calculator.js', function(){
     });
     });
 
-    
+    describe('get version', function() {
+        let calculate;
+
+        beforeEach(function() {
+            calculator = new Calculator();
+        });
+
+        it('fetches version from external source', function(done) {
+            spyOn(window, 'fetch').and.returnValue(Promise.resolve(
+                new Response('{ "version": "0.1" }')
+            ));
+
+            calculator.version.then(function(version) {
+                expect(version).toBe('0.1');
+
+                done();
+            });
+        });
+    });
 });
