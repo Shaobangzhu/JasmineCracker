@@ -2,6 +2,11 @@ class Calculator {
     constructor() {
         this.total = 0;
     }
+
+    get version() {
+        return '0.1';
+    }
+
     add(number) {
         return this.total += number;
     }
@@ -18,3 +23,8 @@ class Calculator {
         return this.total /= number;
     }
 }
+
+Object.defineProperty(Calculator.prototype, 'version', {
+    enumerable: true,
+    configurable: true
+})
