@@ -88,6 +88,18 @@ describe('main.js', function() {
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith(30);
         });
+
+        it('calls updateResult (example using and .callFake)', function() {
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callFake(function(number){
+                return 'usage of callFake is rare';
+            });
+
+            calculate('5*6');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('usage of callFake is rare');
+        });
     });
 
     describe('updateResult()', function() {
