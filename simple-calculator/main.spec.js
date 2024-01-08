@@ -1,9 +1,53 @@
 describe('main.js', function() {
     describe('calculate()', function() {
-        it('validates expression', function() {
+
+
+        it('STUB: validates expression when the first number is invalid', function() {
             spyOn(window, 'updateResult').and.stub();
 
             calculate('a+3');
+
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('STUB: validates expression when the second number is invalid', function() {
+            spyOn(window, 'updateResult').and.stub();
+
+            calculate('3+a');
+
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('STUB: validates expression when the operation is invalid', function() {
+            spyOn(window, 'updateResult').and.stub();
+
+            calculate('3_4');
+
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('validates expression when the first number is invalid', function() {
+            spyOn(window, 'updateResult').and.stub();
+
+            calculate('a+3');
+
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('validates expression when the second number is invalid', function() {
+            spyOn(window, 'updateResult').and.stub();
+
+            calculate('3+a');
+
+            expect(window.updateResult).toHaveBeenCalled();
+        });
+
+        it('validates expression when the operation is invalid', function() {
+            spyOn(window, 'updateResult').and.stub();
+
+            calculate('3_4');
+
+            expect(window.updateResult).toHaveBeenCalled();
         });
 
         xit('calls add');
