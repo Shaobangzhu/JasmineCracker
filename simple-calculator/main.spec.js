@@ -8,6 +8,8 @@ describe('main.js', function() {
             calculate('a+3');
 
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Operation NOT Recognized.');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
         it('STUB: validates expression when the second number is invalid', function() {
@@ -16,6 +18,8 @@ describe('main.js', function() {
             calculate('3+a');
 
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Operation NOT Recognized.');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
         it('STUB: validates expression when the operation is invalid', function() {
@@ -24,6 +28,8 @@ describe('main.js', function() {
             calculate('3_4');
 
             expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('Operation NOT Recognized.');
+            expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
         it('validates expression when the first number is invalid', function() {

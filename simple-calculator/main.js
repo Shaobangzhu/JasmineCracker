@@ -8,7 +8,7 @@ function calculate(inputValue) {
     const operation = inputValue.match(expression);
 
     if (Number.isNaN(numberA) || Number.isNaN(numberB) || operation === null) {
-        updateResult('Operation NOT Recognized');
+        updateResult('Operation NOT Recognized.');
         return;
     }
 
