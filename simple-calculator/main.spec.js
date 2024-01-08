@@ -151,13 +151,15 @@ describe('main.js', function() {
         });
     });
 
-    xdescribe('showVersion()', function() {
+    describe('showVersion()', function() {
         it('calls calculator.version', function() {
              spyOn(document, 'getElementById').and.returnValue({
                 innerText: null
              });
 
-             spyOnProperty(Calculator.prototype, 'version', 'get');
+             spyOnProperty(Calculator.prototype, 'version', 'get').and.returnValue(
+                Promise.resolve()
+             );
 
              const spy = Object.getOwnPropertyDescriptor(Calculator.prototype, 'version').get;
 
