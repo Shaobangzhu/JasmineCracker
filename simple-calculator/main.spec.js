@@ -83,10 +83,10 @@ describe('main.js', function() {
             spyOn(window, 'updateResult');
             spyOn(Calculator.prototype, 'multiply').and.callThrough();
 
-            calculate('5*5');
+            calculate('5*6');
 
             expect(window.updateResult).toHaveBeenCalled();
-            expect(window.updateResult).toHaveBeenCalledWith(25);
+            expect(window.updateResult).toHaveBeenCalledWith(30);
         });
     });
 
