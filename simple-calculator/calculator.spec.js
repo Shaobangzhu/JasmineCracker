@@ -36,7 +36,9 @@ describe('calculator.js', function(){
         });
     });
 
-    // toBe "==="
+
+    describe('Matchers', function() {
+        // toBe "==="
     it('should initialize the total', function() {
         const calculator = new Calculator();
 
@@ -127,4 +129,7 @@ describe('calculator.js', function(){
 
         expect(calculator).toBeCalculator();
     });
+    });
+
+    
 });
