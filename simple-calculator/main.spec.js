@@ -100,6 +100,16 @@ describe('main.js', function() {
             expect(window.updateResult).toHaveBeenCalled();
             expect(window.updateResult).toHaveBeenCalledWith('usage of callFake is rare');
         });
+
+        it('calls updateResult (example using and .returnValue)', function() {
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.returnValue('whatever [multiply] return');
+
+            calculate('5*6');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith('whatever [multiply] return');
+        });
     });
 
     describe('updateResult()', function() {
