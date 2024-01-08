@@ -32,36 +32,62 @@ describe('main.js', function() {
             expect(window.updateResult).toHaveBeenCalledTimes(1);
         });
 
-        it('validates expression when the first number is invalid', function() {
-            spyOn(window, 'updateResult').and.stub();
+        it('calls add',function() {
+            // spyOn(Calculator.prototype, 'add');
 
-            calculate('a+3');
+            // calculate('3+4');
 
-            expect(window.updateResult).toHaveBeenCalled();
+            // expect(Calculator.prototype.add).toHaveBeenCalledTimes(2);
+
+            const spy = spyOn(Calculator.prototype, 'add');
+
+            calculate('3+4');
+
+            expect(spy).toHaveBeenCalledTimes(2);
+            expect(spy).toHaveBeenCalledWith(3);
+            expect(spy).toHaveBeenCalledWith(4);
         });
 
-        it('validates expression when the second number is invalid', function() {
-            spyOn(window, 'updateResult').and.stub();
+        it('calls subtract', function() {
 
-            calculate('3+a');
+            const spy = spyOn(Calculator.prototype, 'subtract');
 
-            expect(window.updateResult).toHaveBeenCalled();
+            calculate('10-7');
+
+            expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalledWith(7);
         });
 
-        it('validates expression when the operation is invalid', function() {
-            spyOn(window, 'updateResult').and.stub();
+        it('calls multiply', function() {
+            
+            const spy = spyOn(Calculator.prototype, 'multiply');
 
-            calculate('3_4');
+            calculate('3*8');
 
-            expect(window.updateResult).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalled();
+            expect(spy).toHaveBeenCalledWith(8);
         });
 
-        xit('calls add');
-        xit('calls subtract');
-        xit('calls multiply');
-        xit('calls divide');
-        xit('validates operation');
-        xit('calls updateResults');
+        it('calls divide', function() {
+
+            const spy = spyOn(Calculator.prototype, 'divide');
+
+            calculate('3/2');
+
+            expect(spy).toHaveBeenCalled();
+            expect(spy).not.toHaveBeenCalledWith(3);
+            expect(spy).toHaveBeenCalledWith(2);
+        });
+
+        it('calls updateResult (example using and .callThrough)', function() {
+            spyOn(window, 'updateResult');
+            spyOn(Calculator.prototype, 'multiply').and.callThrough();
+
+            calculate('5*5');
+
+            expect(window.updateResult).toHaveBeenCalled();
+            expect(window.updateResult).toHaveBeenCalledWith(25);
+        });
     });
 
     describe('updateResult()', function() {
