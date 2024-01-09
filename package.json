@@ -1,0 +1,19 @@
+{
+  "name": "jasminecracker",
+  "version": "1.0.0",
+  "description": "Learn how to unit test JavaScript using Jasmine Framework, from first test to CI/CD",
+  "main": "simple-calculator/main.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaobangzhu/JasmineCracker.git"
+  },
+  "author": "Chaoran Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaobangzhu/JasmineCracker/issues"
+  },
+  "homepage": "https://github.com/Shaobangzhu/JasmineCracker#readme"
+}
