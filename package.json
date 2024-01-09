@@ -4,7 +4,7 @@
   "description": "Learn how to unit test JavaScript using Jasmine Framework, from first test to CI/CD",
   "main": "simple-calculator/main.js",
   "scripts": {
-    "test": "karma start"
+    "test": "test start"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Shaobangzhu/JasmineCracker/issues"
   },
-  "homepage": "https://github.com/Shaobangzhu/JasmineCracker#readme"
+  "homepage": "https://github.com/Shaobangzhu/JasmineCracker#readme",
+  "devDependencies": {
+    "jasmine-core": "^5.1.1",
+    "jasmine-matchers": "^0.2.3",
+    "karma": "^6.4.2"
+  }
 }
